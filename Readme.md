@@ -2,7 +2,7 @@ This script is sending RabbitMQ queue sizes (sum of all ready and unacknowledged
 
 1. Make sure that you have `rabbitmqctl` installed.
 2. Run `bundle install`
-3. Run the script manually to see if it works: `$ ./rabbitmq_copperegg_metrics.rb YOUR_API_KEY`
+3. Run the script manually to see if it works: `$ ruby rabbitmq-copperegg-metrics.rb YOUR_API_KEY`
 4. Add the script to your Crontab to let it report metrics every minute:
 
      * * * * * /usr/bin/ruby /opt/copperegg/rabbitmq-copperegg-metrics/rabbitmq-copperegg-metrics.rb YOUR_API_KEY
