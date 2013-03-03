@@ -39,11 +39,9 @@ end
 
 source = Socket.gethostname + "-rabbitmq"
 
-puts "#{Time.now}: M: #{total_waiting_messages}, MEM: #{total_used_memory}"
-puts "Sending to CopperEgg as #{metric_group.name} (source: #{source}) ..."
+#puts "#{Time.now}: M: #{total_waiting_messages}, MEM: #{total_used_memory}"
+#puts "Sending to CopperEgg as #{metric_group.name} (source: #{source}) ..."
 
 metrics = {:waiting_messages => total_waiting_messages, :used_queue_memory => total_used_memory}
 
 CopperEgg::MetricSample.save(metric_group.name, source, Time.now.to_i, metrics)
-
-puts "Done!"
