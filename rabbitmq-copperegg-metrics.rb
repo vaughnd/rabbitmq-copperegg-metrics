@@ -15,7 +15,7 @@ metric_group.metrics << {"type"=>"ce_gauge", "name"=>"used_queue_memory", "unit"
 metric_group.save
 
 # http://www.rabbitmq.com/man/rabbitmqctl.1.man.html
-queues = `rabbitmqctl list_queues -p / messages memory`.split("\n")
+queues = `/usr/sbin/rabbitmqctl list_queues -p / messages memory`.split("\n")
 
 total_waiting_messages = 0
 total_used_memory = 0
